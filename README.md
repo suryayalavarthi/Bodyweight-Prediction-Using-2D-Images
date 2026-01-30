@@ -4,6 +4,9 @@
 [![XGBoost](https://img.shields.io/badge/XGBoost-2.1.4-orange.svg)](https://xgboost.readthedocs.io/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.50-red.svg)](https://streamlit.io/)
 [![SHAP](https://img.shields.io/badge/SHAP-Explainable%20AI-green.svg)](https://shap.readthedocs.io/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit%20Cloud-FF4B4B.svg)](https://bodyweight-prediction-using-2d-images.streamlit.app)
+
+> **🚀 [Try the Live Demo](https://bodyweight-prediction-using-2d-images.streamlit.app)** - Upload a photo and get instant weight predictions!
 
 This project implements a **research-grade machine learning pipeline** to estimate body weight from 2D facial images. By extracting 9 specific biometric ratios and optimizing an XGBoost regressor, this implementation **surpassed the baseline** established in the primary research paper.
 
@@ -90,27 +93,41 @@ This aligns with anthropometric research showing that facial height increases wi
 
 ---
 
-## 🚀 Live Demo (Streamlit)
+## 🚀 Live Demo
 
-The project includes a **production-ready Streamlit dashboard** that allows users to:
+### **[🌐 Try it Now on Streamlit Cloud](https://bodyweight-prediction-using-2d-images.streamlit.app)**
 
-1. Upload a frontal facial image
-2. View real-time landmark detection
-3. Receive a weight estimate with a **95% Confidence Interval**
-4. Download detailed feature analysis as CSV
+The project includes a **production-ready Streamlit dashboard** deployed on Streamlit Cloud:
+
+**Live App**: https://bodyweight-prediction-using-2d-images.streamlit.app
+
+**Features**:
+1. 📤 Upload a frontal facial image
+2. 🔍 View real-time face detection with bounding box
+3. ⚖️ Receive weight estimate with **95% Confidence Interval**
+4. 📊 Explore detailed facial feature breakdown (9 ratios)
+5. 💾 Download results as CSV
+
+### Run Locally
 
 ```bash
-# To run the demo locally:
-cd "/Users/suryayalavarthi/Downloads/Bodyweight Predication"
-.venv/bin/streamlit run streamlit_app.py
+# Clone and setup
+git clone https://github.com/suryayalavarthi/Bodyweight-Prediction-Using-2D-Images.git
+cd Bodyweight-Prediction-Using-2D-Images
+pip install -r requirements.txt
+
+# Launch app
+streamlit run streamlit_app.py
 ```
 
-**Demo Features**:
+**Example Output**:
 - 📤 Drag-and-drop image upload
 - 🔍 Automatic face detection with bounding box
 - ⚖️ Weight prediction: `185.4 lbs (84.1 kg) ± 28.9 lbs`
 - 📊 Facial feature breakdown (9 ratios)
 - 💾 Exportable results (CSV)
+
+**Try it yourself**: [bodyweight-prediction-using-2d-images.streamlit.app](https://bodyweight-prediction-using-2d-images.streamlit.app)
 
 ---
 
@@ -347,8 +364,8 @@ This project builds upon:
 
 **Author**: Surya Yalavarthi  
 **Institution**: University of Cincinnati  
-**Email**: [Your Email]  
-**GitHub**: [Your GitHub Profile]
+**GitHub**: [github.com/suryayalavarthi](https://github.com/suryayalavarthi)  
+**Live Demo**: [bodyweight-prediction-using-2d-images.streamlit.app](https://bodyweight-prediction-using-2d-images.streamlit.app)
 
 **Documentation**:
 - [Research Discussion](RESEARCH_DISCUSSION.md) - Academic analysis and failure mode investigation
@@ -380,7 +397,7 @@ Not licensed for commercial use without permission.
 
 **Built with scientific rigor and engineering excellence**
 
-[🚀 Launch Demo](http://localhost:8501) | [📖 Read Paper](RESEARCH_DISCUSSION.md)
+[🚀 Live Demo](https://bodyweight-prediction-using-2d-images.streamlit.app) | [📖 Read Paper](RESEARCH_DISCUSSION.md) | [💻 View Code](https://github.com/suryayalavarthi/Bodyweight-Prediction-Using-2D-Images)
 
 **⭐ Star this repo if you found it useful!**
 
