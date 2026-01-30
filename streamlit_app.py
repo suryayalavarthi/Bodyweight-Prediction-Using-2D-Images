@@ -1,12 +1,24 @@
 """
-Body Weight Estimation from Facial Features
-Streamlit Web Application
+Project: Biometric Weight Estimation
+Module: Streamlit Web Application
+Description: Production-ready web interface for real-time body weight estimation from
+             facial photographs. Implements face detection, feature extraction, and
+             XGBoost-based prediction with confidence intervals.
 
-This app uses the optimized XGBoost model to estimate body weight from facial images.
-Upload a photo and get an instant weight prediction based on facial feature analysis.
+Technical Specifications:
+    - Framework: Streamlit
+    - Face Detection: OpenCV Haar Cascades
+    - Model: XGBoost Regressor (72 KB)
+    - Features: 9 normalized facial biometric ratios
+    - Output: Weight prediction with 95% confidence interval
 
-Author: Research Team
-Date: 2026-01-29
+Performance:
+    - MAE: 13.09 kg (28.86 lbs)
+    - Inference Time: <1 second per image
+
+Author: Surya Yalavarthi
+Institution: University of Cincinnati
+Date: January 2026
 """
 
 import streamlit as st

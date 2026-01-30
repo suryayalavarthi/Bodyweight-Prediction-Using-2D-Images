@@ -1,8 +1,18 @@
 """
-Save Trained XGBoost Model for Streamlit Deployment
+Project: Biometric Weight Estimation
+Module: Model Serialization for Deployment
+Description: Trains and serializes the optimized XGBoost model for production deployment
+             in the Streamlit web application. Uses best hyperparameters from optimization.
 
-This script loads the optimized model and saves it as a pickle file
-for use in the Streamlit web application.
+Technical Specifications:
+    - Input: Processed facial features CSV (66,724 samples)
+    - Output: Serialized XGBoost model (pickle format)
+    - Hyperparameters: Optimized via RandomizedSearchCV
+    - Model Size: ~72 KB (highly portable)
+
+Author: Surya Yalavarthi
+Institution: University of Cincinnati
+Date: January 2026
 """
 
 import pickle

@@ -1,11 +1,19 @@
 """
-Corrected Facial Feature Extraction - Memory-Safe Edition
+Project: Biometric Weight Estimation
+Module: Feature Extraction Pipeline
+Description: Extracts 9 normalized facial biometric ratios from frontal face images
+             using OpenCV Haar Cascades. Implements memory-efficient streaming
+             architecture for processing large datasets on resource-constrained systems.
 
-Purpose: Re-extract facial features from images with 'A' prefix IDs to match labels_utf8.csv
-Constraint: 8GB RAM (uses generator pattern and aggressive memory management)
+Technical Specifications:
+    - Input: Frontal face images (JPG/PNG)
+    - Output: CSV with 9 facial feature ratios normalized by face width
+    - Memory: Optimized for 8GB RAM via generator patterns
+    - Processing: Batch writing and aggressive garbage collection
 
-Author: Senior Data Engineer
-Date: 2026-01-29
+Author: Surya Yalavarthi
+Institution: University of Cincinnati
+Date: January 2026
 """
 
 import os

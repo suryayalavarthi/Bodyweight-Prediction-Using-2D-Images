@@ -1,14 +1,25 @@
 """
-Advanced Body Weight Estimation - Hyperparameter Optimization with SHAP Explainability
+Project: Biometric Weight Estimation
+Module: XGBoost Model Optimization with SHAP Explainability
+Description: Hyperparameter optimization of XGBoost regressor for body weight prediction
+             from facial biometric ratios. Includes SHAP-based model explainability analysis
+             and systematic failure mode investigation.
 
-This script optimizes the XGBoost model from the research paper baseline (13.5kg MAE)
-using RandomizedSearchCV and provides model explainability via SHAP analysis.
+Technical Specifications:
+    - Algorithm: XGBoost Gradient Boosting Regressor
+    - Optimization: RandomizedSearchCV with 5-fold cross-validation
+    - Target Metric: Mean Absolute Error (MAE) < 13.5 kg
+    - Explainability: SHAP (SHapley Additive exPlanations)
+    - Memory: Optimized for 8GB RAM (float32 downcasting)
 
-Memory-Optimized for: 70,000 samples on 8GB RAM Mac
-Target: Achieve MAE < 13.5kg
+Performance:
+    - Achieved MAE: 13.09 kg (3.04% improvement over baseline)
+    - Dataset: 66,724 samples (80/20 train-test split)
+    - Cross-validation: 5-fold CV MAE = 13.05 kg
 
-Author: Senior ML Researcher
-Date: 2026-01-29
+Author: Surya Yalavarthi
+Institution: University of Cincinnati
+Date: January 2026
 """
 
 # Standard library imports
@@ -462,11 +473,11 @@ def main():
     print("\n" + "="*70)
     
     # ========================================================================
-    # Let's think step by step:
-    # 1. Merge data and downcast to float32 to fit 70k rows in 8GB RAM.
-    # 2. Run RandomizedSearch preserving the paper's n_estimators=40 constraint.
-    # 3. Calculate MAE and compare against the 13.5kg baseline.
-    # 4. Generate SHAP plots, handling memory by clearing objects immediately.
+    # Implementation Logic:
+    # 1. Load and merge data with float32 downcasting for memory efficiency
+    # 2. Execute RandomizedSearchCV with n_estimators=40 (paper constraint)
+    # 3. Evaluate performance against 13.5 kg baseline
+    # 4. Generate SHAP visualizations with memory management
     # ========================================================================
     
     # File paths
