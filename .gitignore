@@ -1,0 +1,75 @@
+# ============================================================================
+# .gitignore for Biometric Weight Estimation Project
+# ============================================================================
+
+# Large Datasets (7 GB - DO NOT UPLOAD)
+idoc_weight_estimation/data/raw_images/
+idoc_weight_estimation/archive/
+*.zip
+*.tar
+*.gz
+*.7z
+
+# Large Pre-trained Models (Not needed for final repo)
+idoc_weight_estimation/shape_predictor_68_face_landmarks.dat
+idoc_weight_estimation/face_landmarker.task
+idoc_weight_estimation/facial_features_ratios.csv  # Old version, keep V2 only
+
+# Keep the processed CSV (8.6 MB - safe for GitHub)
+# facial_features_ratios_V2.csv is INCLUDED
+
+# Python Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Model Checkpoints (Keep final model only)
+checkpoints/
+*.ckpt
+# xgboost_weight_model.pkl is INCLUDED (72 KB)
+
+# Temporary Files
+*.log
+*.tmp
+*.temp
+.cache/
+
+# OS Files
+Thumbs.db
+Desktop.ini
+
+# Streamlit Cache
+.streamlit/
+
+# Output Files (Keep SHAP plots, exclude temporary outputs)
+outputs/temp/
+outputs/*.tmp
+
+# Data Files (Keep only essential CSVs)
+# Keep: facial_features_ratios_V2.csv (8.6 MB)
+# Keep: optimization_log.txt (6 KB)
+# Ignore: Raw image dataset (7 GB)
+idoc_weight_estimation/facial_features_ratios.csv
