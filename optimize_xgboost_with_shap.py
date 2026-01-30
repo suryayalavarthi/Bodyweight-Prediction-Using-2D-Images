@@ -60,7 +60,7 @@ def load_and_merge_data_efficient(features_path: str, labels_path: str) -> pd.Da
     3. CRITICAL: Downcast all float64 columns to float32
     
     Args:
-        features_path: Path to facial_features_ratios.csv
+        features_path: Path to facial_features_ratios_V2.csv
         labels_path: Path to labels_utf8.csv
     
     Returns:

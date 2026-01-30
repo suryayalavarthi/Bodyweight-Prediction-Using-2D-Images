@@ -7,6 +7,14 @@
 
 This project implements a **research-grade machine learning pipeline** to estimate body weight from 2D facial images. By extracting 9 specific biometric ratios and optimizing an XGBoost regressor, this implementation **surpassed the baseline** established in the primary research paper.
 
+### 🎯 The 8GB Challenge
+
+**Challenge**: Processing 70,000 high-resolution mugshots on a consumer-grade 8GB RAM MacBook.  
+**Solution**: Engineered a streaming extraction pipeline using Haar Cascades and generator patterns, achieving an **813:1 data compression ratio** to enable high-performance XGBoost training without memory overflow.
+
+![SHAP Feature Importance Analysis](shap_summary.png)
+*SHAP analysis revealing Face Height Ratio as the primary predictor of body weight*
+
 ---
 
 ## 📊 Performance Benchmarks
@@ -152,18 +160,17 @@ seaborn>=0.13.0
 ## 📁 Project Structure
 
 ```
-Bodyweight Predication/
+biometric-weight-estimation/
 ├── 📄 README.md                          # This file
 ├── 📄 RESEARCH_DISCUSSION.md             # Academic analysis
-├── 📄 DEPLOYMENT_GUIDE.md                # Production deployment
-├── 📄 PROJECT_ARCHIVE_GUIDE.md           # Data management
 │
 ├── 🐍 extract_features_corrected.py      # Feature extraction pipeline
 ├── 🐍 optimize_xgboost_with_shap.py      # Model training & SHAP
 ├── 🐍 save_model_for_deployment.py       # Model serialization
 ├── 🐍 streamlit_app.py                   # Web application
 │
-├── 📊 facial_features_ratios_V2.csv      # Extracted features (8.6 MB)
+├── 📊 idoc_weight_estimation/
+│   └── facial_features_ratios_V2.csv     # Extracted features (8.5 MB)
 ├── 🤖 xgboost_weight_model.pkl           # Trained model (72 KB)
 ├── 📋 optimization_log.txt               # Training log
 ├── 📋 requirements.txt                   # Python dependencies
@@ -344,9 +351,7 @@ This project builds upon:
 **GitHub**: [Your GitHub Profile]
 
 **Documentation**:
-- [Research Discussion](RESEARCH_DISCUSSION.md) - Academic analysis
-- [Deployment Guide](DEPLOYMENT_GUIDE.md) - Production deployment
-- [Archive Guide](PROJECT_ARCHIVE_GUIDE.md) - Data management
+- [Research Discussion](RESEARCH_DISCUSSION.md) - Academic analysis and failure mode investigation
 
 **Issues**: Open a GitHub issue for bugs or questions
 
@@ -375,7 +380,7 @@ Not licensed for commercial use without permission.
 
 **Built with scientific rigor and engineering excellence**
 
-[🚀 Launch Demo](http://localhost:8501) | [📖 Read Paper](RESEARCH_DISCUSSION.md) | [🔧 Deploy Guide](DEPLOYMENT_GUIDE.md)
+[🚀 Launch Demo](http://localhost:8501) | [📖 Read Paper](RESEARCH_DISCUSSION.md)
 
 **⭐ Star this repo if you found it useful!**
 
