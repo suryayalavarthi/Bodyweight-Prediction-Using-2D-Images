@@ -82,7 +82,8 @@ The model was built using **XGBoost** with a fixed baseline of **40 estimators**
 
 I utilized **SHAP** (SHapley Additive exPlanations) to move beyond "black-box" predictions. The analysis revealed that the **Face Height Ratio** is the strongest indicator of body mass, providing a biological link between facial adiposity and total weight.
 
-![SHAP Summary Plot](shap_summary.png)
+![Local Explainability - Force Plot](shap_force_error_1.png)
+*Local SHAP force plot demonstrating how specific facial features (blue/red) push the weight prediction away from the base value.*
 
 **Key Findings**:
 - **Primary Predictor**: Face Height Ratio (vertical facial dimension)
@@ -245,6 +246,10 @@ The model exhibits **systematic underestimation** for individuals over **200 kg 
 | 215.5 kg | 87.8 kg | 127.7 kg | 59.2% |
 | 206.8 kg | 89.9 kg | 116.9 kg | 56.5% |
 
+![SHAP Failure Analysis 1](shap_force_error_2.png)
+![SHAP Failure Analysis 2](shap_force_error_3.png)
+*Force plots for outlier samples (>200kg) showing "Face Height Ratio" pulling the prediction significantly lower, highlighting the model's conservative bias at the extreme high-end.*
+
 **Root Cause**: Class imbalance in training data (extreme weights underrepresented)
 
 **Recommendation**: Collect additional samples from extreme weight classes (>200 kg) to improve model robustness.
@@ -287,7 +292,7 @@ Developed and tested on an **8GB Apple M2 system**, demonstrating that large-sca
 
 ### SHAP Feature Importance
 
-![SHAP Summary](shap_summary.png)
+*See global feature importance rankings in the Technical Architecture section.*
 
 **Ranking** (by absolute SHAP value):
 1. **Face Height Ratio** (dominant)
